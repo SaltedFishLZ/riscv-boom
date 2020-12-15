@@ -315,15 +315,15 @@ class BoomCore(implicit p: Parameters) extends BoomModule
 
   
     printf("C%d: %d [%d] pc=[%x] W[r%d=%x] R[r%d=%x] R[r%d=%x] inst=[%x] DASM(%x)\n",
-           0,
+           debug_tsc_reg,
            debug_tsc_reg, // timer
-           1, // valid
+           1.U, // valid
            debug_irt_reg, // pc
-           0, 0x149A,
-           1, 0x249A,
-           2, 0x149B,
-           3, 0x249B,
-           0, 0, 0, 0 // dump for format matching
+           0.U, 0.U,
+           1.U, 0.U,
+           0.U, 1.U,
+           1.U, 1.U,
+           debug_irt_reg, debug_irt_reg, debug_irt_reg, debug_irt_reg // placeholder for format matching
           )
 
 
