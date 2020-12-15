@@ -313,6 +313,20 @@ class BoomCore(implicit p: Parameters) extends BoomModule
   dontTouch(debug_tsc_reg)
   dontTouch(debug_irt_reg)
 
+  
+    printf("C%d: %d [%d] pc=[%x] W[r%d=%x] R[r%d=%x] R[r%d=%x] inst=[%x] DASM(%x)\n",
+           0,
+           debug_tsc_reg, // timer
+           1, // valid
+           debug_irt_reg, // pc
+           0, 0x149A,
+           1, 0x249A,
+           2, 0x149B,
+           3, 0x249B,
+           0, 0, 0, 0 // dump for format matching
+          )
+
+
   //****************************************
   // Print-out information about the machine
 
